@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     languages: { en: "/", "zh-CN": "/", "x-default": "/" },
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "The Founders Dilemma · 开国者的两难 — How China Treated the Generals Who Won the Empire" }],
     title: TITLE_EN,
     description:
       "Birds gone, the good bow is stored away. A comparative study of six Chinese founders and the generals who made them — and a darker thesis: apparent virtue is often just untested circumstance.",
@@ -55,6 +56,7 @@ export const metadata: Metadata = {
     alternateLocale: ["zh_CN"],
   },
   twitter: {
+    images: ["/twitter-image.png"],
     card: "summary_large_image",
     title: TITLE_EN,
     description:
