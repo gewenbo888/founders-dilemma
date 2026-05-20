@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #14110d;
+  --bone: #e9e1d0;
+  --cinnabar: #bb3c29;
+  --bronze: #a8894e;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+  color: var(--bone);
+}
+
+body {
+  background-color: #0e0c0a;
+  background-image:
+    radial-gradient(ellipse 1100px 520px at 12% -8%, rgba(187, 60, 41, 0.10), transparent 60%),
+    radial-gradient(ellipse 900px 500px at 95% 8%, rgba(168, 137, 78, 0.07), transparent 62%),
+    radial-gradient(ellipse 1200px 600px at 50% 120%, rgba(94, 27, 19, 0.12), transparent 60%);
+  font-family: "Spectral", ui-serif, Georgia, serif;
+  letter-spacing: 0.004em;
+}
+
+::selection {
+  background: rgba(187, 60, 41, 0.5);
+  color: #fff;
+}
+
+/* Rice-paper grain overlay */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.92  0 0 0 0 0.86  0 0 0 0 0.74  0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.display {
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+.zh {
+  font-family: "Noto Serif SC", serif;
+}
+
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  color: #a8894e;
+}
+
+/* Vertical seal-stamp text */
+.vertical-zh {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.18em;
+}
+
+/* Cinnabar seal box */
+.seal {
+  color: #e9e1d0;
+  background: linear-gradient(160deg, #9c3122, #5e1b13);
+  border: 1px solid rgba(233, 225, 208, 0.25);
+  border-radius: 3px;
+}
+
+/* Hairline rule */
+.rule-bronze {
+  background: linear-gradient(90deg, transparent, rgba(168, 137, 78, 0.55) 18%, rgba(168, 137, 78, 0.55) 82%, transparent);
+}
+
+/* Ink-drip underline for headers */
+.ink-glow {
+  text-shadow: 0 0 24px rgba(187, 60, 41, 0.35);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; background: #0e0c0a; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #332b21, #5e1b13);
+  border-radius: 5px;
+}
+
+/* Slow drift for hero ash */
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.5; }
+  100% { transform: translateY(-40px) translateX(12px); opacity: 0; }
+}
+
+/* Reveal on enter — applied via inline style stagger */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise {
+  animation: riseIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Card hover lift */
+.lift {
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s;
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px -24px rgba(0, 0, 0, 0.9);
+}

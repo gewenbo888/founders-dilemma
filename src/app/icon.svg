@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0e0c0a"/>
+  <rect x="6" y="5" width="20" height="22" rx="2" fill="#9c3122" stroke="#d6bd88" stroke-width="0.8"/>
+  <text x="16" y="22" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="15" font-weight="700" fill="#f5efe2">功</text>
+</svg>
